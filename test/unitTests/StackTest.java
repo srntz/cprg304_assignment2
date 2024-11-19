@@ -14,7 +14,7 @@ import implementations.MyStack;
 
 /**
  * @author kitty, maryam
- * @version 3.2 Aug. 28, 2024   
+ * @version 3.2 Aug. 28, 2024
  * Class Description:
  * Test for the Arraylist-based implementation of the StackADT defined in the CPRG 304
  * Assignment 2.
@@ -61,7 +61,7 @@ public class StackTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#MyStack()}
 	 * to create a stack.
 	 */
@@ -84,7 +84,7 @@ public class StackTest
 		stack.push( one );
 		stack.push( two );
 		stack.clear();
-		
+
 		assertEquals( "Stack size is incorrect ", 0, stack.size() );
 	}
 
@@ -99,7 +99,7 @@ public class StackTest
 		stack.push( one );
 		stack.push( two );
 		stack.push( three );
-		
+
 		assertTrue(stack.contains( one ));
 		assertTrue(stack.contains( two ));
 		assertTrue(stack.contains( three ));
@@ -185,22 +185,22 @@ public class StackTest
 		stack2.push( three );
 
 		boolean actual = stack.equals( stack2 );
-		
+
 		assertEquals( "Failed to return false.", expected, actual );
-		
+
 		stack2.clear();
 		stack2.push(two);
 		stack2.push(one);
-		
+
 		actual = stack.equals( stack2 );
-		
+
 		assertEquals( "Failed to return false.", expected, actual );
-		
+
 	}
-	
+
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#isEmpty()}
 	 * to return true when the stack is empty.
 	 */
@@ -211,7 +211,7 @@ public class StackTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#isEmpty()}
 	 * to return false when the stack is not empty.
 	 */
@@ -221,7 +221,7 @@ public class StackTest
 		stack.push( one );
 		stack.push( two );
 		stack.push( three );
-		
+
 		assertFalse(stack.isEmpty());
 	}
 
@@ -246,25 +246,25 @@ public class StackTest
 		stack.push( five );
 
 		Iterator<Integer> it = stack.iterator();
-		
+
 		assertTrue(it.hasNext());
-		
+
 		int actual5 = it.next(); // kitty: flipped 1-5 to 5-1
 		int actual4 = it.next();
 		int actual3 = it.next();
 		int actual2 = it.next();
 		int actual1 = it.next();
-		
+
 		assertFalse(it.hasNext());
-		
+
 		assertEquals( "Stack iterator contained wrong element at position 1 ", expected5, actual5 );
 		assertEquals( "Stack iterator contained wrong element at position 2 ", expected4, actual4 );
 		assertEquals( "Stack iterator contained wrong element at position 3 ", expected3, actual3 );
 		assertEquals( "Stack iterator contained wrong element at position 4 ", expected2, actual2 );
 		assertEquals( "Stack iterator contained wrong element at position 5 ", expected1, actual1 );
-		
+
 	}
-	
+
 	/**
 	 * Test method for {@link implementations.MyStack#iterator()}
 	 * to return an iterator to iterate over items in an empty stack.
@@ -273,9 +273,9 @@ public class StackTest
 	public void testIterator_Empty()
 	{
 		Iterator<Integer> it = stack.iterator();
-		
+
 		assertFalse(it.hasNext());
-		
+
 		try
 		{
 			it.next();
@@ -285,15 +285,15 @@ public class StackTest
 		{
 			assertTrue(true);
 		}
-		
+
 	}
 
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#peek()}
 	 * to return the item on the top of the stack without removing it.
-	 * 
+	 *
 	 * @throws EmptyStackException
 	 */
 	@Test
@@ -313,7 +313,7 @@ public class StackTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#peek()}
 	 * to throw EmptyStackException when peeking at the top of an empty stack.
 	 */
@@ -333,10 +333,10 @@ public class StackTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#pop()}
 	 * to remove the item on top of the stack.
-	 * 
+	 *
 	 * @throws EmptyStackException
 	 */
 	@Test
@@ -356,7 +356,7 @@ public class StackTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#pop()}
 	 * to throw EmptyStackException when removing from an empty stack.
 	 */
@@ -376,10 +376,10 @@ public class StackTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#push(java.lang.Object)}
 	 * to add multiple items to top of the stack.
-	 * 
+	 *
 	 * @throws EmptyStackException
 	 */
 	@Test
@@ -412,7 +412,7 @@ public class StackTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#push(java.lang.Object)}
 	 * to throw a NullPointerException when adding a null to the stack.
 	 */
@@ -436,7 +436,7 @@ public class StackTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#search(java.lang.Object)}
 	 * to return the position of an item at the bottom of the stack.
 	 */
@@ -455,7 +455,7 @@ public class StackTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#search(java.lang.Object)}
 	 * to return the position of an item at the top of the stack.
 	 */
@@ -474,7 +474,7 @@ public class StackTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#search(java.lang.Object)}
 	 * to return the position of an item in the middle of the stack.
 	 */
@@ -491,9 +491,9 @@ public class StackTest
 		int actual = stack.search( three );
 		assertEquals( "Failed to return the correct position.", expected, actual );
 	}
-	
+
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#search(java.lang.Object)}
 	 * to return -1 when the item is not found in the stack.
 	 */
@@ -510,7 +510,7 @@ public class StackTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link utilities.MyStack#size()}
 	 * to return size when stack is empty.
 	 */
@@ -519,9 +519,9 @@ public class StackTest
 	{
 		assertEquals( "Failed to return size.", 0, stack.size() );
 	}
-	
+
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link utilities.MyStack#size()}
 	 * to return size when stack has one item.
 	 */
@@ -533,7 +533,7 @@ public class StackTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link utilities.MyStack#size()}
 	 * to return size when there are many items in the stack.
 	 */
@@ -549,7 +549,7 @@ public class StackTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#toArray()}
 	 * to return an Object array containing all the items in the stack from top to bottom.
 	 */
@@ -561,7 +561,7 @@ public class StackTest
 		stack.push( three );
 
 		Integer[] array = new Integer[3];
-		
+
 		array[0] = three;
 		array[1] = two;
 		array[2] = one;
@@ -572,7 +572,7 @@ public class StackTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#toArray(E[])}
 	 * returning an array containing all items in the stack when the array passed has sufficient length.
 	 */
@@ -583,9 +583,9 @@ public class StackTest
 		stack.push( two );
 		stack.push( three );
 
-	
+
 		Object[] array = new Integer[3];
-		
+
 		array[0] = three;
 		array[1] = two;
 		array[2] = one;
@@ -594,9 +594,9 @@ public class StackTest
 		returnArray = stack.toArray( returnArray );
 		assertArrayEquals( "Failed to return the correct array.", array, returnArray );
 	}
-	
+
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#toArray(E[])}
 	 * returning an array containing all items in the stack when the array passed doesn't have
 	 *  sufficient length.
@@ -608,9 +608,9 @@ public class StackTest
 		stack.push( two );
 		stack.push( three );
 
-	
+
 		Object[] array = new Integer[3];
-		
+
 		array[0] = three;
 		array[1] = two;
 		array[2] = one;
@@ -619,29 +619,29 @@ public class StackTest
 		returnArray = stack.toArray( returnArray );
 		assertArrayEquals( "Failed to return the correct array.", array, returnArray );
 	}
-	
+
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#toArray(E[])}
 	 * to throw NullPointerException when a null is passed.
 	 */@Test
 	public void testToArrayNullArray()
 	{
 		Integer[] returnArray = null;
-		try 
+		try
 		{
 			returnArray = stack.toArray(returnArray);
 			fail("Failed to throw NullPointerException.");
-		} 
-		catch (NullPointerException e) 
+		}
+		catch (NullPointerException e)
 		{
 			assertTrue(true);
 		}
 	}
-	 
+
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyStack#stackOverflow(E[])}
 	 * to return false since the stack doesn't have a fixed size .
 	 */@Test
