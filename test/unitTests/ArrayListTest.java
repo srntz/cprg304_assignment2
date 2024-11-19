@@ -366,14 +366,14 @@ public class ArrayListTest
 
 		myList.add( one );
 		myList.add( two );
-		
+
 		boolean actualReturn = myList.addAll( intList );
 		assertEquals( "Failed to return true.", expectedReturn, actualReturn );
-		
+
 		int expectedSize = 5;
 		int actualSize = myList.size();
 		assertEquals( "Failed to update size.", expectedSize, actualSize );
-		
+
 		for( int i = 0; i < myList.size(); i++ )
 		{
 			int expectedValue = i + 1;

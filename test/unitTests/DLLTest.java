@@ -14,12 +14,11 @@ import utilities.Iterator;
 
 /**
  * @author kitty, maryam
- * @version 3.2 Aug. 28, 2024   
+ * @version 3.2 Aug. 28, 2024
  * Class Description:
  * Test for the linked-list-based implementation of the ListADT defined in the CPRG304
  * Assignment 2.
  */
-
 public class DLLTest
 {
 	// Attributes
@@ -75,7 +74,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLL#add(int, java.lang.Object)}
 	 * to add item to an empty list and return true.
 	 */
@@ -130,7 +129,7 @@ public class DLLTest
 			assertTrue( true );
 		}
 	}
-	
+
 	/**
 	 * Test method for
 	 * {@link implementations.MyDLLt#add(int, java.lang.Object)}
@@ -180,10 +179,10 @@ public class DLLTest
 		assertTrue(myList.add( 0, one ));
 		assertTrue(myList.add( 1, two ));
 		assertTrue(myList.add( 2, three ));
-		
+
 		int actualSize = myList.size();
 		assertEquals( "Failed to update size", expectedSize, actualSize);
-		
+
 		for( int i = 0; i < 3; i++ )
 		{
 			int expectedValue = i + 1;
@@ -201,14 +200,14 @@ public class DLLTest
 	public void testAddIntE_ItemAddedCorrectly_Head()
 	{
 		int expectedSize = 3;
-		
+
 		assertTrue(myList.add( 0, three ));
 		assertTrue(myList.add( 0, two ));
 		assertTrue(myList.add( 0, one ));
-		
+
 		int actualSize = myList.size();
 		assertEquals( "Failed to update size", expectedSize, actualSize);
-		
+
 		for( int i = 0; i < myList.size(); i++ )
 		{
 			int expectedValue = i + 1;
@@ -216,7 +215,7 @@ public class DLLTest
 			assertEquals( "Failed to add item to the correct position.", expectedValue, actualValue );
 		}
 	}
-	
+
 	/**
 	 * Test method for
 	 * {@link implementations.MyDLLt#add(java.lang.Object)}
@@ -226,14 +225,14 @@ public class DLLTest
 	public void testAddIntE_ItemAddedCorrectly_Middle()
 	{
 		int expectedSize = 3;
-		
+
 		assertTrue(myList.add( 0, one ));
 		assertTrue(myList.add( 1, three ));
 		assertTrue(myList.add( 1, two ));
-		
+
 		int actualSize = myList.size();
 		assertEquals( "Failed to update size", expectedSize, actualSize);
-		
+
 		for( int i = 0; i < myList.size(); i++ )
 		{
 			int expectedValue = i + 1;
@@ -333,14 +332,14 @@ public class DLLTest
 
 		myList.add( one );
 		myList.add( two );
-		
+
 		boolean actualReturn = myList.addAll( intArray );
 		assertEquals( "Failed to return true.", expectedReturn, actualReturn );
-		
+
 		int expectedSize = 5;
 		int actualSize = myList.size();
 		assertEquals( "Failed to update size.", expectedSize, actualSize );
-		
+
 		for( int i = 0; i < myList.size(); i++ )
 		{
 			int expectedValue = i + 1;
@@ -348,7 +347,7 @@ public class DLLTest
 			assertEquals( "Failed to add item to the correct position.", expectedValue, actualValue );
 		}
 	}
-	
+
 	/**
 	 * Test method for
 	 * {@link implementations.MyDLLt#addAll(utilities.List)}
@@ -365,14 +364,14 @@ public class DLLTest
 
 		myList.add( one );
 		myList.add( two );
-		
+
 		boolean actualReturn = myList.addAll( intList );
 		assertEquals( "Failed to return true.", expectedReturn, actualReturn );
-		
+
 		int expectedSize = 5;
 		int actualSize = myList.size();
 		assertEquals( "Failed to update size.", expectedSize, actualSize );
-		
+
 		for( int i = 0; i < myList.size(); i++ )
 		{
 			int expectedValue = i + 1;
@@ -476,7 +475,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#get(int)}
 	 * to return the only item in list.
 	 */
@@ -492,7 +491,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#get(int)}
 	 * to get the first item in the list.
 	 */
@@ -510,9 +509,9 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#get(int)}
-	 * to get the last item in the list. 
+	 * to get the last item in the list.
 	 */
 	@Test
 	public void testGetInt_Tail()
@@ -528,7 +527,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#get(int)}
 	 * to get the middle item in the list.
 	 */
@@ -545,9 +544,9 @@ public class DLLTest
 		int actual = myList.get( 2 );
 		assertEquals( "Failed to get the correct item from list.", expected, actual );
 	}
-	
+
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#get(int)}
 	 * to get an item in position 0 of an empty list and throw an IndexOutOfBoundsException.
 	 */
@@ -566,12 +565,12 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#get(int)}
 	 * to throw an IndexOutOfBoundsException when getting from an invalid positive index.
 	 */
 	@Test
-	public void testGetInt_IndexOutOfBoundsException_PositiveIndex() 
+	public void testGetInt_IndexOutOfBoundsException_PositiveIndex()
 	{
 		myList.add( one );
 		myList.add( two );
@@ -587,9 +586,9 @@ public class DLLTest
 			assertTrue( true );
 		}
 	}
-	
+
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#get(int)}
 	 * to throw an IndexOutOfBoundsException when getting from an invalid negative index.
 	 */
@@ -612,7 +611,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#isEmpty()}
 	 * to return true when list is empty.
 	 */
@@ -625,7 +624,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#isEmpty()}
 	 * to return false when list is not empty.
 	 */
@@ -639,7 +638,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#iterator()}
 	 * to get an iterator for an empty list.
 	 */
@@ -647,7 +646,7 @@ public class DLLTest
 	public void testIterator_Empty()
 	{
 		boolean expectedBoolean = false;
-		
+
 		Iterator<Integer> it = myList.iterator();
 		boolean actualBoolean = it.hasNext();
 		assertEquals( "Failed to return false.", expectedBoolean, actualBoolean);
@@ -663,7 +662,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#iterator()}
 	 * to get an iterator items in a list with multiple items.
 	 */
@@ -671,7 +670,7 @@ public class DLLTest
 	public void testIterator()
 	{
 		boolean expectedBoolean = true;
-		
+
 		myList.add( one );
 		myList.add( two );
 		myList.add( three );
@@ -691,11 +690,11 @@ public class DLLTest
 		expectedBoolean = false;
 		actualBoolean = it.hasNext();
 		assertEquals( "Failed to return false.", expectedBoolean, actualBoolean);
-		
+
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#remove(int)}
 	 * to remove the only item in the list.
 	 */
@@ -706,16 +705,16 @@ public class DLLTest
 
 		int expected = 1;
 		int actual = myList.remove( 0 );
-		
+
 		assertEquals( "Failed to remove the correct item.", expected, actual );
-		
+
 		int expectedSize = 0;
 		int actualSize = myList.size();
 		assertEquals( "Failed to update size.", expectedSize, actualSize );
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#remove(int)}
 	 * to remove the item at the head of the list.
 	 */
@@ -726,13 +725,13 @@ public class DLLTest
 		myList.add( two );
 		myList.add( three );
 		myList.add( four );
-		
+
 		int expected1 = 1;
 		int actual1 = myList.remove( 0 );
 
 		int expected2 = 2;
 		int actual2 = myList.get( 0 );
-		
+
 		int expectedSize = 3;
 		int actualSize = myList.size();
 
@@ -742,7 +741,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#remove(int)}
 	 * to remove the item at the tail of the list.
 	 */
@@ -763,15 +762,15 @@ public class DLLTest
 
 		int expectedSize = 3;
 		int actualSize = myList.size();
-		
+
 		assertEquals( "Failed to remove the correct item.", expected1, actual1 );
 		assertEquals( "Failed to remove the correct item.", expected2, actual2 );
 		assertEquals( "Failed to update size.", expectedSize, actualSize );
-		
+
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#remove(int)}
 	 * to remove the item at neither head nor tail of the list.
 	 */
@@ -793,10 +792,10 @@ public class DLLTest
 
 		int expected3 = 4;
 		int actual3 = myList.get( 2 );
-		
+
 		int expectedSize = 4;
 		int actualSize = myList.size();
-		
+
 		assertEquals( "Failed to remove the correct item.", expected1, actual1 );
 		assertEquals( "Failed to remove the correct item.", expected2, actual2 );
 		assertEquals( "Failed to remove the correct item.", expected3, actual3 );
@@ -804,7 +803,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#remove(int)}
 	 * to throw an IndexOutOfBoundsException on an empty list.
 	 */
@@ -823,7 +822,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#remove(int)}
 	 * to throw an IndexOutOfBoundsException on a list with multiple items.
 	 */
@@ -843,11 +842,11 @@ public class DLLTest
 		{
 			assertTrue( true );
 		}
-		
+
 	}
-	
+
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#remove(int)}
 	 * to throw an IndexOutOfBoundsException on a list with multiple items.
 	 */
@@ -858,7 +857,7 @@ public class DLLTest
 		myList.add( two );
 		myList.add( three );
 
-		
+
 		try
 		{
 			myList.remove( -1 );
@@ -871,7 +870,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#remove(E)}
 	 * to remove from a list with only one item.
 	 */
@@ -889,7 +888,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#remove(int)}
 	 * to remove a found item from a list with multiple items.
 	 */
@@ -910,11 +909,11 @@ public class DLLTest
 
 		int expectedSize = 4;
 		int actualSize = myList.size();
-		
+
 		assertEquals( "Failed to remove the correct item.", expected1, actual1 );
 		assertEquals( "Failed to remove the correct item.", expected2, actual2 );
 		assertEquals( "Size was not updated correctly.", expectedSize, actualSize );
-		
+
 		expected1 = 1;
 		actual1 = myList.remove( one );
 
@@ -923,11 +922,11 @@ public class DLLTest
 
 		expectedSize = 3;
 		actualSize = myList.size();
-		
+
 		assertEquals( "Failed to remove the correct item.", expected1, actual1 );
 		assertEquals( "Failed to remove the correct item.", expected2, actual2 );
 		assertEquals( "Size was not updated correctly.", expectedSize, actualSize );
-		
+
 		expected1 = 3;
 		actual1 = myList.remove( three );
 
@@ -936,14 +935,14 @@ public class DLLTest
 
 		expectedSize = 2;
 		actualSize = myList.size();
-		
+
 		assertEquals( "Failed to remove the correct item.", expected1, actual1 );
 		assertEquals( "Failed to remove the correct item.", expected2, actual2 );
 		assertEquals( "Size was not updated correctly.", expectedSize, actualSize );
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#remove(int)}
 	 * to remove a not found item.
 	 */
@@ -966,7 +965,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#remove(E)}
 	 * to throw a NullPointerException when removing a null object from the list.
 	 */
@@ -992,7 +991,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#set(int, E)}
 	 * to set the item at neither head nor tail position in the list to a new item.
 	 */
@@ -1018,7 +1017,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#set(int, E)}
 	 * to set the item at the head of the list to a new item.
 	 */
@@ -1042,7 +1041,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#set(int, E)}
 	 * to set the item at tail of the list to a new item.
 	 */
@@ -1068,7 +1067,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#set(int, E)}
 	 * to throw a NullPointerException when a null is passed for the item to set.
 	 */
@@ -1093,7 +1092,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#set(int, E)}
 	 * to throw an IndexOutOfBoundsException on an empty list.
 	 */
@@ -1114,7 +1113,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#set(int, E)}
 	 * to throw IndexOutOfBoundsException on a positive invalid index.
 	 */
@@ -1139,7 +1138,7 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#set(int, E)}
 	 * to throw IndexOutOfBoundsException on a negative invalid index.
 	 */
@@ -1163,7 +1162,7 @@ public class DLLTest
 		}
 	}
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#size()}
 	 * to return size of an empty list.
 	 */
@@ -1175,7 +1174,7 @@ public class DLLTest
 		assertEquals( "Failed to return correct size.", expected, actual );
 	}
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#size()}
 	 * to return size of a list after adding one item.
 	 */
@@ -1190,12 +1189,12 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#size()}
 	 * to return size of a list after adding multiple items.
 	 */
 	@Test
-	public void testSize_AddMany() 
+	public void testSize_AddMany()
 	{
 		int expected = 5;
 		myList.add( one );
@@ -1224,12 +1223,12 @@ public class DLLTest
 	}
 
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#size()}
 	 * to return the size of a list after removing a few items.
 	 */
 	@Test
-	public void testSize_RemoveMany() 
+	public void testSize_RemoveMany()
 	{
 		int expected = 2;
 		myList.add( one );
@@ -1264,7 +1263,7 @@ public class DLLTest
 
 		assertArrayEquals( "Failed to convert list to array.", original, returnArray );
 	}
-	
+
 	/**
 	 * Test method for
 	 * {@link implementations.MyDLLt#toArray(T[])}
@@ -1295,19 +1294,19 @@ public class DLLTest
 	public void testToArrayNullArray()
 	{
 		Integer[] returnArray = null;
-		try 
+		try
 		{
 			returnArray = myList.toArray(returnArray);
 			fail("Failed to throw NullPointerException.");
-		} 
-		catch (NullPointerException e) 
+		}
+		catch (NullPointerException e)
 		{
 			assertTrue(true);
 		}
 	}
-	
+
 	/**
-	 * Test method for 
+	 * Test method for
 	 * {@link implementations.MyDLLt#toArray()}
 	 * to return an Object array containing all items in the list.
 	 */
