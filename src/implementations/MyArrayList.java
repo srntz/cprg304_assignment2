@@ -80,7 +80,7 @@ public class MyArrayList<T> implements ListADT<T> {
     public boolean addAll(ListADT<? extends T> toAdd) throws NullPointerException {
         Iterator<? extends T> iterator = toAdd.iterator();
         while(iterator.hasNext()) {
-            var item = iterator.next();
+            T item = iterator.next();
             verifySufficientCapacity();
             array[size] = item;
             size++;
