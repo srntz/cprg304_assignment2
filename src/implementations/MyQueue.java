@@ -1,7 +1,6 @@
 package implementations;
 
 import java.io.Serializable;
-
 import java.util.NoSuchElementException;
 
 import utilities.Iterator;
