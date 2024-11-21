@@ -6,6 +6,7 @@ import java.util.NoSuchElementException;
 
 import utilities.Iterator;
 import utilities.QueueADT;
+import exceptions.EmptyQueueException;
 
 public class MyQueue<E> implements QueueADT<E>, Serializable {
 	private MyDLL<E> data;
@@ -121,9 +122,4 @@ public class MyQueue<E> implements QueueADT<E>, Serializable {
         return data.size();
     }
 
-    public static class EmptyQueueException extends NoSuchElementException {
-        public EmptyQueueException(String message) {
-            super(message);
-        }
-    }
 }
