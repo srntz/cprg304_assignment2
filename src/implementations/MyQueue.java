@@ -79,6 +79,9 @@ public class MyQueue<E> implements QueueADT<E>, Serializable {
 
         @Override
         public E next() {
+        	if (!hasNext()) {
+        		throw new NoSuchElementException();
+        	}
             return data.get(currentIndex++);
         }
     }
