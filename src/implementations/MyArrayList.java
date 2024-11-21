@@ -3,6 +3,7 @@ package implementations;
 import utilities.Iterator;
 import utilities.ListADT;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
@@ -188,7 +189,8 @@ public class MyArrayList<T> implements ListADT<T> {
         }
 
         if(toHold.length < size()) {
-           T[] newArray = Arrays.copyOf(toHold, size());
+            @SuppressWarnings("unchecked")
+           T[] newArray = (T[]) Array.newInstance(toHold.getClass().getComponentType(), size());
 
             for(int i = 0; i < size(); i++) {
                 newArray[i] = array[i];
@@ -206,8 +208,8 @@ public class MyArrayList<T> implements ListADT<T> {
     }
 
     @Override
-    public T[] toArray() {
-        T[] newArray = (T[]) new Object[size()];
+    public Object[] toArray() {
+        Object[] newArray = new Object[size()];
 
         for(int i = 0; i < size(); i++) {
             newArray[i] = array[i];
