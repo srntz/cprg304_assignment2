@@ -244,4 +244,8 @@ public class Parser {
 		Parser parser = new Parser();
 		parser.parseXML(args[0]);
 	}
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
